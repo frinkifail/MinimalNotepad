@@ -1,0 +1,69 @@
+:root {
+    --font-family-sans-serif: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-family-current: var(--font-family-sans-serif);
+    --bgcolor-dark: rgb(41, 44, 41);
+    --txcolor-dark: rgb(253, 255, 253);
+    --errcolor-dark: rgb(237, 100, 100);
+    --primcolor-dark: rgb(100, 149, 237);
+}
+
+.modern body {
+    font-family: var(--font-family-current);
+    color: var(--txcolor-dark);
+    background-color: var(--bgcolor-dark);
+    color-scheme: dark;
+}
+
+.modern button, .modern input[type="submit"] {
+    font-family: var(--font-family-current);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 5px;
+}
+
+.modern button.common-button {
+    cursor: pointer;
+}
+.modern button.fill-width-button {
+    min-width: 25%;
+    max-width: 100%;
+    width: 25%;
+    font-size: large;
+    padding: 10px 20px;
+    font-weight: light;
+}
+.modern button.fill-width-button.full-width {
+    width: 95%;
+}
+
+.modern input[type="text"].input-tf, .modern input[type="number"].input-tf {
+    padding: 5px;
+    font-family: var(--font-family-current);
+}
+
+.modern.extra section.settings.danger > h2 {
+    color: var(--errcolor-dark);
+}
+
+.modern.color .error {
+    color: var(--errcolor-dark);
+}
+.modern.color .light-surface {
+    background-color: #f4faff;
+    backdrop-filter: blur(1px);
+    color: var(--bgcolor-dark);
+}
+.modern.color .light-surface > * {
+    margin: 10px;
+}
+.modern.color .primary {
+    color: var(--primcolor-dark);
+}
+
+.modern.extra .border {
+    border: 2px solid currentcolor;
+    background-color: transparent;
+    border-radius: 8px;
+}

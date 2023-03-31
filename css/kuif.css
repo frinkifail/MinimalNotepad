@@ -1,0 +1,399 @@
+/* KUIF
+Maintained Version
+Old Version in @frinkifail/kuif (Private)
+Specifically adjusted to the game's needs 
+Adjusted again to fit with Minimal Notepad */
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+
+.kuif * {
+    /* sheesh, looks pretty good */
+    border-radius: 4px;
+}
+
+:root {
+    --text-color: #fff;
+    --back-color: #222;
+    --text-button-color: #ff7d37;
+    --nav-back-color: #2b2b2b;
+    --fluent-contained-button-back-color: #7e8fff;
+    --fluent-contained-button-text-color: #e9ffff;
+    --fluent-contained-button-glow-color: #bec7ff;
+    --cursor-default: url('cursor_default_3.svg');
+    --cursor-pointer: url('cursor_pointer.svg');
+    --font-family-sans-serif: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-family-current: var(--font-family-monospace);
+    --font-family-monospace: 'Roboto Mono', 'Consolas', 'Monaco', 'Inconsolata', monospace;
+    --color-inf-dark: #0d0f0d;
+}
+
+.fluent button.contained-button {
+    background-color: var(--fluent-contained-button-back-color);
+    color: var(--fluent-contained-button-text-color);
+    border-radius: 4px;
+    border: none;
+    font: inherit;
+    padding: 10px 20px;
+}
+
+.fluent button.contained-button:active {
+    box-shadow: 0 0 5px 3px var(--fluent-contained-button-glow-color);
+}
+
+.kuif body,
+.fluent body {
+    background-color: var(--color-inf-dark); 
+    color: var(--text-color);
+    font-family: var(--font-family-current);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.kuif code,
+.kuif pre,
+.kuif kbd,
+.fluent code,
+.fluent pre,
+.fluent kbd {
+    font-family: var(--font-family-monospace);
+}
+
+.kuif button.text-button,
+.kuif text-button,
+.kuif tb,
+.kuif tbb,
+.kuif text-button-big {
+    color: var(--text-button-color);
+    background: transparent;
+    border: none;
+    letter-spacing: 2px;
+    font-family: var(--font-family-current);
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.kuif button.text-button:hover,
+.kuif text-button:hover,
+.kuif tb:hover,
+.kuif tbb:hover,
+.kuif text-button-big:hover {
+    cursor: var(--cursor-pointer);
+}
+
+.kuif button.text-button.fs-big,
+.kuif text-button-big,
+.kuif tbb {
+    font-size: larger;
+}
+
+.kuif .blur,
+.fluent .blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+    z-index: 9998;
+    height: 0;
+    transition: height 0.5s ease-in-out;
+}
+
+.kuif .center-text {
+    text-align: center;
+}
+
+/* Navigation Rail container */
+.kuif.atom .navigation-rail {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    background-color: var(--nav-back-color);
+    box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Navigation Rail links
+.kuif .navigation-rail a {
+    display: block;
+    padding: 12px;
+    color: #616161;
+    text-decoration: none;
+} */
+
+.kuif.atom .navigation-rail a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 12px;
+}
+
+.kuif.atom .navigation-rail a:hover {
+    background-color: #f5f5f5;
+    color: var(--back-color);
+    border-radius: 4px;
+}
+
+.kuif.atom .navigation-rail a.active {
+    background-color: #1976d2;
+    color: #fff;
+}
+
+.kuif.atom .navigation-rail .navigation-rail-content {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.kuif button.button-transparent {
+    outline: transparent;
+    border: none;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    /* cursor: pointer; */
+}
+
+.kuif button.button-transparent a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.kuif.atom button#reveal-menu {
+    background: transparent;
+    border-radius: 50%;
+}
+
+.kuif.atom button#reveal-menu:hover {
+    background: local;
+    background-color: #ffffff5e;
+}
+
+.kuif.atom div#action-buttons {
+    margin-right: 8px;
+    display: flex;
+}
+
+.kuif select {
+    background-color: var(--nav-back-color);
+    color: inherit;
+    font-family: inherit;
+    border-radius: 4px;
+}
+
+.kuif.atom button#buy-max-button {
+    position: fixed;
+    /* top: 0; */
+    right: 0;
+    /* bottom: 500px; */
+}
+
+.kuif.atom #home-content-blur {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: fit-content;
+    margin: auto;
+    border-radius: 8px;
+    backdrop-filter: blur(2px);
+    background-color: #ffffff14;
+}
+
+.kuif.atom #shop-content-blur {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: fit-content;
+    margin: auto;
+    border-radius: 8px;
+    backdrop-filter: blur(2px);
+    background-color: #ffffff14;
+    display: flex;
+    gap: 8px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.kuif.atom .shop-item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: fit-content;
+    margin: auto;
+    border-radius: 8px;
+    backdrop-filter: blur(2px);
+    background-color: #ffffff2c;
+    margin-top: 8px;
+    width: calc(100% * (1/4) - 4px - 1px);
+    cursor: var(--cursor-pointer), pointer;
+}
+
+.kuif.atom .shop-item .header {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.kuif.atom .shop-item .cost {
+    position: absolute;
+    bottom: -11px;
+    right: 4px;
+    background-color: #ad7eff;
+    padding: 6px 12px;
+    font-family: Rubik;
+    color: #040303;
+}
+
+.kuif.atom .shop-item .amount {
+    position: absolute;
+    bottom: -11px;
+    left: 4px;
+    background-color: #a9ffb0;
+    padding: 6px 12px;
+    font-family: Rubik;
+    color: #101010;
+}
+
+.kuif .card {
+    background-color: var(--nav-back-color);
+    padding-left: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 140px;
+    width: fit-content;
+    transition: transform 1.2s ease-in-out;
+}
+
+.kuif .card .header {
+    padding-left: 8px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* TODO: .kuif .card .desc */
+.kuif .card.success {
+    background-color: #1a7221d7;
+    color: rgb(204, 232, 205);
+}
+
+.kuif .card.clickable {
+    cursor: var(--cursor-pointer), pointer;
+}
+
+.kuif .card.alert-dialog {
+    /* display: no; */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: height 0.5s ease-in-out;
+}
+
+/* .kuif.atom .shop-item#first-shop-item {
+    margin-top: 4px;
+}
+.kuif.atom .shop-item#last-shop-item {
+    margin-bottom: 4px;
+} */
+
+.kuif.atom body {
+    background-image: url("https://images.pond5.com/simple-star-space-background-effect-023768280_prevstill.jpeg");
+    /* i did not copy i swear */
+    cursor: url('cursor_default_3.svg'), default;
+}
+
+.kuif.atom a,
+button {
+    cursor: url('cursor_pointer.svg'), pointer;
+}
+
+/* The switch container */
+.kuif .switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 20px;
+}
+
+/* Hide default checkbox */
+.kuif .switch input {
+    display: none;
+}
+
+/* The slider */
+.kuif .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+/* Switch background when checked */
+.kuif .slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Change color of switch when checked */
+.kuif input:checked+.slider {
+    background-color: #2196F3;
+}
+
+/* Move the slider when checked */
+.kuif input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+.kuif.minimal #main-notepad {
+    width: 100%;
+    height: 95%;
+    background-color: var(--color-inf-dark);
+    color: var(--text-color);
+    border: none;
+    outline: none;
+    font-size: large;
+    text-align: center;
+}
+
+.kuif textarea {
+    font-family: inherit;
+}
+
+.kuif button.text-button-new {
+    color: var(--fluent-contained-button-back-color);
+}
+
+.kuif .underline {
+    border-bottom: 1px solid white !important;
+    border-radius: 0 !important;
+    padding-bottom: 5px;
+    transition: 0.3s;
+    width: 10px;
+    display: inline-flex;
+    justify-content: center;
+}
+.kuif .underline:hover {
+    width: 100%;
+}
+
+/* prefix game classes with .atom
+incase i forgor lol */
