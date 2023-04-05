@@ -371,7 +371,7 @@ button {
     border: none;
     outline: none;
     font-size: large;
-    text-align: center;
+/*     text-align: center; */
 }
 
 .kuif textarea {
